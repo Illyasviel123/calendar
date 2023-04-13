@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #cfcfcf;
+}
+.container{
+    margin-left: 90px;
+    position: relative;
+}
+.calendar{
+    margin: 50px;
+    display: inline-block;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 5px 5px 20px rgba(1,1,1,.5);
+    transition-duration: 0.5s;
+}
+.active{
+    cursor: pointer;
+}
+.header{
+    margin: 100px auto 0;
+    width: 80%;
+    position: relative;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 800;
+}
+.header p{
+    margin: 0 auto;
+    display: inline-block;
+}
+button{
+    margin: 0;
+    padding: 0;
+    border: 1px solid; 
+    outline: none;
+    background-color: #fff;
+    cursor: pointer;
+}
+.header button{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.header #minusYear{
+    position: absolute;
+    left: 10%;
+    top: 30%;
+}
+.header #minusMonth{
+    position: absolute;
+    left: 15%;
+    top: 30%;
+}
+.header #addMonth{
+    position: absolute;
+    right: 15%;
+    top:30%;
+}
+.header #addYear{
+    position: absolute;
+    right: 10%;
+    top:30%;
+}
+.header button:hover{
+    background-color: #d3d3d3;
+    transition-duration: 0.3s;
+}
+table {
+    margin: 50px auto;
+    width: 80%;
+    text-align: center;
+    font-size: 30px;
+}
+table tbody tr{
+    line-height: 90px;
+}
+table tbody tr td{
+    width: 50px;
+}
+table tbody tr td:hover{
+    color:darkturquoise;
+    transition-duration: 0.3s;
+}
+table .today{
+    background-color: #ff0000;
+    color: #fff;
+}
+.remark{
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    display: inline-block;
+    margin-top: 100px;
+    margin-right: 50px;
+    padding: 50px;
+    width: 250px;
+    height: 400px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 5px 5px 20px rgba(1,1,1,.5);
+}
+.remark .rmk{
+    margin-bottom: 50px;
+}
+.remark h1{
+    margin-bottom: 50px;
+}
+.remark button{
+    display: block;
+    margin: 50px auto;
+    width: 80px;
+    height: 50px;
+    border-radius: 10px;
+}
+.remark button:hover{
+    color: deeppink;
+    border-color: deeppink;
+    transition-duration: 0.3s;
+    background-color: #f9f9f9;
+}
+.remark_,.count{
+    margin: 50px;
+    margin-left: 100px;
+    font-size: 30px;
+}
