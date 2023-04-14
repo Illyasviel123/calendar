@@ -144,7 +144,13 @@ window.addEventListener("load",function(){
                 const calendar = document.querySelector('.calendar')
                 calendar.style.width = '60%'
                 const remark = document.createElement('span')
-                remark.innerHTML=`<h1>${year}年${month}月${date.getDate()+index}日</h1>
+                let day
+                if(year==date.getFullYear() && month==date.getMonth()+1){
+                    day = date.getDate()+index
+                }else{
+                    day = index+1
+                }
+                remark.innerHTML=`<h1>${year}年${month}月${day}日</h1>
                 <div class="rmk">备注：<input id="rmk_"></div><input type="checkbox" id="countDown">
                 同步设定倒计时<button id="submit">确定</button>`
                 remark.className='remark'
@@ -158,21 +164,20 @@ window.addEventListener("load",function(){
                     let remark_ = document.createElement('h3')
                     let value = input.value.trim()
                     remark_.className='remark_'
-                    remark_.innerHTML = `${year}年${month}月${date.getDate()+index}日备注：${value}`
-                    const nul = document.querySelector('#null')
-                    calendar.insertBefore(remark_,nul)
+                    remark_.innerHTML = `${year}年${month}月${day}日备注：${value}`
+                    calendar.appendChild(remark_)
                     if(countDown.checked == true){
                         let count = document.createElement('h3')
                         count.className='count'
-                        const date1 = +new Date(`${year}-${month}-${date.getDate()+index}`)
+                        const date1 = +new Date(`${year}-${month}-${day}`)
                         const dateNow = +new Date()
-                        let day = Math.ceil((date1-dateNow)/1000/60/60/24)
+                        let day_ = Math.ceil((date1-dateNow)/1000/60/60/24)
                         if(value == ''){
-                            count.innerHTML=`距离${year}年${month}月${date.getDate()+index}日还有${day}天`
+                            count.innerHTML=`距离${year}年${month}月${day}日还有${day_}天`
                         }else{
-                            count.innerHTML=`距离${value}还有${day}天`
+                            count.innerHTML=`距离${value}还有${day_}天`
                         }
-                        calendar.insertBefore(count,nul)
+                        calendar.appendChild(count)
                     }
                     container.removeChild(remark)
                     calendar.style.width = '90%'
@@ -230,6 +235,3 @@ window.addEventListener("load",function(){
     /*头部按钮改变时间*/
     
 })
-
-
-
